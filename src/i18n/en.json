@@ -1,0 +1,28 @@
+{
+  "header": {
+    "loginRegister": "Login/Register"
+  },
+  "routes": {
+    "events": "Events",
+    "eventDetails": "Event Details",
+    "newEvent": "Create Event"
+  },
+  "homepage": {
+    "title": "Homepage"
+  },
+  "login": {
+    "title": "Login"
+  },
+  "events": {
+    "title": "Events"
+  },
+  "newEvent": {
+    "title": "New Event",
+    "titleLabel": "Title",
+    "descriptionLabel": "Description"
+  },
+  "notFound": {
+    "title": "Not Found",
+    "message": "Perhaps the page has gone for a long walk?"
+  }
+}
