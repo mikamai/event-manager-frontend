@@ -1,0 +1,68 @@
+{
+  "name": "event-manager-frontend",
+  "version": "1.0.0",
+  "description": "EventManager Webapp",
+  "main": "dist/index.html",
+  "repository": "https://github.com/mikamai/event-manager-frontend",
+  "author": "Venini42",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "start": "parcel src/index.html --open",
+    "lint": "eslint ./src/**/*.js",
+    "prebuild": "rimraf dist",
+    "build": "parcel build src/index.html --no-source-maps"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "@babel/preset-react": "^7.0.0",
+    "@typescript-eslint/eslint-plugin": "2.x",
+    "@typescript-eslint/parser": "2.x",
+    "babel-eslint": "10.x",
+    "eslint": "6.x",
+    "eslint-config-react-app": "^5.0.2",
+    "eslint-plugin-flowtype": "3.x",
+    "eslint-plugin-import": "2.x",
+    "eslint-plugin-jsx-a11y": "6.x",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "7.x",
+    "eslint-plugin-react-hooks": "1.x",
+    "husky": ">=1",
+    "lint-staged": ">=8",
+    "parcel-bundler": "^1.12.3",
+    "prettier": "1.18.2",
+    "rimraf": "^3.0.0",
+    "typescript": "3.6.3"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.6.2",
+    "graphql-hooks": "^4.0.1",
+    "i18next": "^17.0.16",
+    "i18next-browser-languagedetector": "^3.0.3",
+    "keycloak-js": ">=7.0.1",
+    "navi": "^0.13.0",
+    "react": "^16.8.0",
+    "react-busy-indicator": "1.0.0",
+    "react-dom": "^16.8.0",
+    "react-grid-system": "^5.0.2",
+    "react-hook-form": "^3.24.1",
+    "react-i18next": "^10.13.1",
+    "react-keycloak": "^7.0.1-191016",
+    "react-navi": "^0.13.0",
+    "react-navi-helmet-async": "^0.13.6",
+    "yup": "^0.27.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}
