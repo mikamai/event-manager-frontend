@@ -19,7 +19,9 @@
   "newEvent": {
     "title": "New Event",
     "titleLabel": "Title",
-    "descriptionLabel": "Description"
+    "descriptionCaption": "The event description",
+    "descriptionLabel": "Description",
+    "submitLabel": "Create Event"
   },
   "notFound": {
     "title": "Not Found",

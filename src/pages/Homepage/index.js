@@ -1,10 +1,9 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+
+import Title from '/components/Title';
 
 const Homepage = () => {
-  const { t } = useTranslation();
-
-  return <h2>{t('homepage:title')}</h2>;
+  return <Title>homepage:title</Title>;
 };
 
 export default React.memo(Homepage);

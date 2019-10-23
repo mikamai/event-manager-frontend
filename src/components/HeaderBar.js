@@ -1,25 +1,52 @@
 import React, { useCallback } from 'react';
+import { KIND, SIZE } from 'baseui/button';
+import {
+  HeaderNavigation,
+  ALIGN,
+  StyledNavigationList,
+  StyledNavigationItem,
+} from 'baseui/header-navigation';
+import { H1 } from 'baseui/typography';
 import { useKeycloak } from 'react-keycloak';
-import { Container, Col, Row } from 'react-grid-system';
-import { useTranslation } from 'react-i18next';
+import { useNavigation } from 'react-navi';
+
+import Button from '/components/Button';
 
 const HeaderBar = () => {
-  const { t } = useTranslation();
   const { keycloak } = useKeycloak();
+  const { navigate } = useNavigation();
+
+  const onHome = useCallback(() => {
+    navigate('/');
+  }, [navigate]);
+
   const onLogin = useCallback(() => {
     keycloak.login();
   }, [keycloak]);
 
   return (
-    <Container fluid>
-      <Row>
-        <Col md={3}>{process.env.APP_NAME}</Col>
-        <Col md={6}></Col>
-        <Col align="end" md={3}>
-          <span onClick={onLogin}>{t('header:loginRegister')}</span>
-        </Col>
-      </Row>
-    </Container>
+    <HeaderNavigation>
+      <StyledNavigationList $align={ALIGN.left}>
+        <StyledNavigationItem>
+          <H1 onClick={onHome}>{process.env.APP_NAME}</H1>
+        </StyledNavigationItem>
+      </StyledNavigationList>
+
+      <StyledNavigationList $align={ALIGN.center} />
+
+      <StyledNavigationList $align={ALIGN.right}>
+        <StyledNavigationItem>
+          {!keycloak.authenticated ? (
+            <Button
+              label="header:loginRegister"
+              kind={KIND.minimal}
+              size={SIZE.compact}
+              onClick={onLogin}
+            />
+          ) : null}
+        </StyledNavigationItem>
+      </StyledNavigationList>
+    </HeaderNavigation>
   );
 };
 

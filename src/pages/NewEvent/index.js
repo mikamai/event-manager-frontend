@@ -1,10 +1,11 @@
 import React, { useCallback } from 'react';
 import { Col, Row } from 'react-grid-system';
 import useForm from 'react-hook-form';
-import { useTranslation } from 'react-i18next';
 import * as yup from 'yup';
 
+import Button from '/components/Button';
 import TextInput from '/components/TextInput';
+import Title from '/components/Title';
 
 const validationSchema = yup.object().shape({
   title: yup.string().required(),
@@ -12,7 +13,6 @@ const validationSchema = yup.object().shape({
 });
 
 const NewEvent = () => {
-  const { t } = useTranslation();
   const { register, handleSubmit, errors } = useForm({
     validationSchema,
   });
@@ -23,7 +23,7 @@ const NewEvent = () => {
   return (
     <Col>
       <Row>
-        <h2>{t('newEvent:title')}</h2>
+        <Title>newEvent:title</Title>
       </Row>
 
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -39,6 +39,7 @@ const NewEvent = () => {
         <Row>
           <TextInput
             name="description"
+            caption="newEvent:descriptionCaption"
             label="newEvent:descriptionLabel"
             errors={errors}
             ref={register}
@@ -46,7 +47,7 @@ const NewEvent = () => {
         </Row>
 
         <Row>
-          <input type="submit" />
+          <Button label="newEvent:submitLabel" type="submit" />
         </Row>
       </form>
     </Col>

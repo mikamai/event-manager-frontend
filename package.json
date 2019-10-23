@@ -38,6 +38,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.6.2",
+    "baseui": "^9.10.0",
     "graphql-hooks": "^4.0.1",
     "i18next": "^17.0.16",
     "i18next-browser-languagedetector": "^3.0.3",
@@ -45,13 +46,15 @@
     "navi": "^0.13.0",
     "react": "^16.8.0",
     "react-busy-indicator": "1.0.0",
-    "react-dom": "^16.8.0",
+    "react-dom": ">= 16.8.0 < 17",
     "react-grid-system": "^5.0.2",
     "react-hook-form": "^3.24.1",
     "react-i18next": "^10.13.1",
     "react-keycloak": "^7.0.1-191016",
     "react-navi": "^0.13.0",
     "react-navi-helmet-async": "^0.13.6",
+    "styletron-engine-atomic": "^1.4.3",
+    "styletron-react": "^5.2.4",
     "yup": "^0.27.0"
   },
   "husky": {
