@@ -1,10 +1,19 @@
-# EventManager Frontend
+# EventManager Frontend <!-- omit in toc -->
 
 > EventManager Web Frontend
 
+**Table of Contents**
+- [Setup](#setup)
+- [Development](#development)
+  - [New Feature](#new-feature)
+  - [New Hotfix](#new-hotfix)
+  - [New Release](#new-release)
+
+<br/>
+
 ## Setup
 
-Clone repo and switch to `develop` branch
+- Clone repo and switch to `develop` branch
 
 ```sh
 git clone git@github.com:mikamai/event-manager-frontend.git
@@ -12,15 +21,30 @@ git clone git@github.com:mikamai/event-manager-frontend.git
 git checkout develop
 ```
 
-Install dependecies
+- Install dependecies
 
 ```sh
 yarn
 ```
 
+- Setup `.env`
+```sh
+APP_NAME=Meetable
+
+BACKEND_URL="https://app.domain.tld/graphql"
+
+KEYCLOAK_URL="https://sso.domain.tld/auth"
+KEYCLOAK_REALM="keycloak-realm"
+KEYCLOAK_CLIENT_ID="keycloak-client-id"
+```
+
+---
+
+## Development
+
 **Choose your destiny!**
 
-## New Feature
+### New Feature
 
 * Open a new branch and name it after the Trello card
   ```sh
@@ -40,8 +64,9 @@ yarn
 
 * Open a `Pull Request` pointing to `develop` branch
 
+---
 
-## New Hotfix
+### New Hotfix
 
 * Checkout `master` branch
   ```sh
@@ -66,7 +91,9 @@ yarn
 
 * Open a `Pull Request` pointing to `master` branch and one pointing to `develop`
 
-## New Release
+---
+
+### New Release
 
 * Checkout `master` branch
   ```sh
